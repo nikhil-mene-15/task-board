@@ -1,0 +1,17 @@
+{
+  "name": "task-board-server",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file=../.env.local --watch src/index.js",
+    "start": "node --env-file=../.env.local src/index.js",
+    "migrate": "node --env-file=../.env.local src/migrate.js",
+    "seed": "node --env-file=../.env.local src/seed.js",
+    "consolidate": "node --env-file=../.env.local src/consolidate.js"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
+  }
+}

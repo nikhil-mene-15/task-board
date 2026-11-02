@@ -51,9 +51,8 @@ export default function Board({ columns, dragDisabled, onMove, onAddTask, onEdit
       const dstCol = next.find((c) => c.id === dst.id);
       const from = srcCol.tasks.findIndex((t) => taskKey(t.id) === active.id);
       const [moved] = srcCol.tasks.splice(from, 1);
-      const insertAt = overIsColumn
-        ? dstCol.tasks.length
-        : dstCol.tasks.findIndex((t) => taskKey(t.id) === over.id);
+      // columns stay newest-first — slot the moved card in by work_date
+      const insertAt = dstCol.tasks.findIndex((t) => t.work_date < moved.work_date);
       dstCol.tasks.splice(insertAt < 0 ? dstCol.tasks.length : insertAt, 0, moved);
     }
     onMove(next);

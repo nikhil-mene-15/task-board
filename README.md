@@ -85,3 +85,5 @@ task-board/
 - API binds to `127.0.0.1` only — safe for local use; add auth before deploying
 - `DATE` columns are returned as `YYYY-MM-DD` strings to avoid timezone shifts
 - Column titles are `UNIQUE`; deleting a column is refused while it has tasks
+
+hi
